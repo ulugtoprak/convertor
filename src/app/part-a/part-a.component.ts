@@ -1,5 +1,10 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from "@angular/router";
+import * as $ from 'jquery';
+
+
+//declare var jQuery:any;
+
 
 @Component({
   selector: 'app-part-a',
@@ -10,14 +15,51 @@ export class PartAComponent implements OnInit {
 
   constructor(private router: Router) { }
 
-    navigateHome() {
-        this.router.navigate(["home"]);
-    }
-    navigateB() {
-        this.router.navigate(["part-b"]);
-    }
 
+
+	convertor(){
+	var check = true;
+	$("#fahrenheit").keyup(function()
+	{
+		while(check)
+		{
+			if( $("#fahrenheit").val() )
+			{
+				var f = parseFloat($("#fahrenheit").val());
+				$("#celcius").val((f - 32) * 5 / 9);
+				check = false;
+
+			}
+			else
+			{
+				check = false;
+			}
+		}
+		check = true;
+	});
+	
+	$("#celcius").keyup(function()
+	{	 
+
+		while(check)
+		{
+			if( $("#celcius").val() )
+			{
+				var f = parseFloat($("#celcius").val());
+				$("#fahrenheit").val((f * 9 / 5) + 32 ); 
+				check = false;
+			}
+			else
+			{
+				check = false;
+			}
+	}
+	check = true;
+	});
+	}
   ngOnInit() {
   }
-
 }
+
+
+

@@ -1,7 +1,37 @@
-<p>Part A</p>
- 
-<p>
-    <a [routerLink]="['part-b']">Part B</a>
-    <a [routerLink]="['home']">Home</a>
-</p>
-
+<!DOCTYPE html>
+<html>
+  <head>
+    <script data-require="jquery@*" data-semver="3.0.0" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.0.0/jquery.js"></script>
+    <link data-require="bootstrap-css@3.3.6" data-semver="3.3.6" rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.css" />
+    <link data-require="bootstrap@3.3.6" data-semver="3.3.6" rel="stylesheet" href="bootstrap" />
+    <link rel="stylesheet" href="style.css" />
+    <script src="script.js"></script>
+  </head>
+  <body>
+    <div class="container">
+      <h2>Temperature Unit Convertor</h2>
+      <form class="form-horizontal" name="convert">
+        <div class="form-group">
+          <label class="control-label col-sm-2" for="celcius">Celcius</label>
+          <div class="col-sm-10">
+				 <input type="text" (keyup)="convertor()" id="celcius" class="form-control" placeholder="celcius">
+          </div>
+        </div>
+        <div class="form-group">
+          <label class="control-label col-sm-2" for="fahrenheit">Fahrenheit</label>
+          <div class="col-sm-10">
+			    <input type="text" (keyup)="convertor()" id="fahrenheit" class="form-control" placeholder="fahrenheit">
+          </div>
+        </div>
+        <div class="form-group">
+          <div class="col-sm-offset-2 col-sm-10">
+		  <p> Enter values on fields above to convert  them respectively </p>             
+          </div>
+          <div class="col-sm-offset-2 col-sm-10">
+		  <p>count is needed</p>             
+          </div>
+        </div>
+      </form>
+    </div>
+  </body>
+</html>

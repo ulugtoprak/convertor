@@ -10,13 +10,6 @@ export class PartBComponent implements OnInit {
 
   constructor(private router: Router) { }
 
-  navigateB() {
-        this.router.navigate(["part-b"]);
-    }
-    navigateHome() {
-        this.router.navigate(["home"]);
-    }
-
   ngOnInit() {
   }
 
