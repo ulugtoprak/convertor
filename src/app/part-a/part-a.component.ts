@@ -12,12 +12,11 @@ import * as $ from 'jquery';
   styleUrls: ['./part-a.component.css']
 })
 export class PartAComponent implements OnInit {
-
+count: number = 0;
   constructor(private router: Router) { }
 
-
-
 	convertor(){
+	this.count++;
 	var check = true;
 	$("#fahrenheit").keyup(function()
 	{
@@ -40,7 +39,6 @@ export class PartAComponent implements OnInit {
 	
 	$("#celcius").keyup(function()
 	{	 
-
 		while(check)
 		{
 			if( $("#celcius").val() )
