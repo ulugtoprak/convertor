@@ -8,50 +8,66 @@
   </head>
   <body>
     <div class="container">
-    <div class="jumbotron">
-      <h2>BMI calculator</h2>
-      <h2>Enter your Weight</h2>
-      <form class="form-horizontal" name="convert">
-        <div class="form-group">
-          <label class="control-label col-sm-2" for="Stone">Stone:</label>
-          <div class="col-sm-2">
-				 <input type="text"  id="stone" class="form-control" placeholder="Stone">
+  <div class="jumbotron">
+    <h1>BMI Calculator</h1>
+    <h2>Enter your Weight</h2>
+    <div class="row">
+      <div class="col-sm-4">
+          <div class="form-group">
+            <label for="stone">Stone:</label>
+            <input (keyup) = "convertPounds()" type="number" class="form-control" [(ngModel)]="stone">
           </div>
-          <label class="control-label col-sm-2" for="Pounds">Pounds:</label>
-                    <div class="col-sm-2">
-				 <input type="text"  id="pound" class="form-control" placeholder="Pounds">
+      </div>
+      <div class="col-sm-4">
+          <div class="form-group">
+            <label for="pounds">Pounds:</label>
+            <input (keyup) = "convertPounds()" type="number" class="form-control" [(ngModel)]="pounds">
           </div>
-          <label class="control-label col-sm-2" for="KG">or KG's:</label>
-                    <div class="col-sm-2">
-				 <input type="text"  id="KG" class="form-control" placeholder="KG's">
+      </div>
+      <div class="col-sm-4">
+          <div class="form-group">
+            <label for="kg">or KGs:</label>
+            <input (keyup) = "convertKilos()" type="number" class="form-control" [(ngModel)]="kg">
           </div>
-        </div>
-        <h2>And your Height</h2>
-        <div class="form-group">
-          <label class="control-label col-sm-2" for="Feet">Feet:</label>
-          <div class="col-sm-2">
-				 <input type="text" id="feet" class="form-control" placeholder="Feet:">
-          </div>
-          <label class="control-label col-sm-2" for="inches">Inches:</label>
-                    <div class="col-sm-2">
-				 <input type="text"  id="inches" class="form-control" placeholder="Inches:">
-          </div>
-          <label class="control-label col-sm-2" for="metres">Metres:</label>
-                    <div class="col-sm-2">
-				 <input type="text"  id="metres" class="form-control" placeholder="Metres:">
-          </div>
-        </div>
-        <div class="form-group">
-          <div class="col-sm-offset-2 col-sm-10">
-		  <h4>Enter your weight either in stone/pounds or kilograms and your height in feet/inches or metres. </h4>             
-          </div>
-          <div class="col-sm-offset-2 col-sm-10">
-			<h4>Result:</h4>             
-          </div>
-        </div>
-       </form>
       </div>
     </div>
+
+    <h2>And Your Height</h2>
+    <div class="row">
+      <div class="col-sm-4">
+          <div class="form-group">
+            <label for="feet">Feet:</label>
+            <input (keyup) = "convertInches()" type="number" class="form-control" [(ngModel)]="feet">
+          </div>
+      </div>
+      <div class="col-sm-4">
+          <div class="form-group">
+            <label for="inches">Inches:</label>
+            <input (keyup) = "convertInches()" type="number" class="form-control" [(ngModel)]="inches">
+          </div>
+      </div>
+      <div class="col-sm-4">
+          <div class="form-group">
+            <label for="metres">or Meters:</label>
+            <input (keyup) = "convertMetres()" type="number" class="form-control" [(ngModel)]="metres">
+          </div>
+      </div>
+    </div>
+    <div class="col-md-12 text-center">
+        <button type="button" (click)="validateInput()" class="btn btn-primary">Caculate BMI</button>
+    </div>
+    <div class="row">
+      <div class="col-md-12 text-center">
+          <h4>Enter your weight either in stones/ pounds or kilograms and your height either in feet/ inches or metres.</h4> 
+      </div>
+   </div>
+   <div class="row">
+      <div class="col-md-12 text-center">
+          <p>{{range}}</p> 
+      </div>
+   </div>
+  </div>
+</div>
   </body>
 </html>
 
